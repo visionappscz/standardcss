@@ -144,3 +144,40 @@
       font-family: 'Times New Roman', Times, serif;
   }
   ```
+### Implementation with Stylelint, PostCSS and Grunt
+We are using [stylelint](https://github.com/stylelint/stylelint) for easiest implementation 
+of standardcss rules. This linter is powered by [PostCSS](https://github.com/postcss/postcss). 
+In this example we are going to use [Grunt](http://gruntjs.com/), however you can choose 
+any task runner that supports PostCSS. 
+
+You need these npm packages: _stylelint_, _grunt_, _grunt-postcss_ and if you are using any 
+CSS preprocessor, you might need supporting PostCSS package. In our example _postcss-less._
+
+Best practise is to check your CSS before any other tasks process it.
+
+####Installation
+1. Install npm packages
+2. Include .stylelintrc in the root of your directory
+3. Prepare Grunt PostCSS task
+4. If you are using preprocess include it in PostCSS task
+5. Add stylelint and postcss-reporter (at least with _clearMessages_ option, 
+but we recommend _throwError_ also)
+6. Add other Grunt tasks to process your CSS
+7. Lint your CSS!
+8. (Optional) Cry over errors and inconsistencies in your stylesheet
+```
+lint: {
+  options: {
+    syntax: require('postcss-less'),
+    processors: [
+      require('stylelint'),
+      require('postcss-reporter')({
+        clearMessages: true,
+        throwError: true,
+      }),
+    ],
+  },
+  src: 'resources/less/**/*.less',
+  dest: '.tmp/main.less',
+},
+  ```
