@@ -151,15 +151,15 @@ In this example we are going to use [Grunt](http://gruntjs.com/), however you ca
 any task runner that supports PostCSS. 
 
 You need these npm packages: _stylelint_, _grunt_, _grunt-postcss_ and if you are using any 
-CSS preprocessor, you might need supporting PostCSS package. In our example _postcss-less._
+CSS preprocessor, you might need supporting PostCSS package. In our example _postcss-less_.
 
-Best practise is to check your CSS before any other tasks process it.
+Best practice is to check your CSS before any other tasks process it.
 
 ####Installation
 1. Install npm packages
-2. Include .stylelintrc in the root of your directory
+2. Include `.stylelintrc` in the root of your directory
 3. Prepare Grunt PostCSS task
-4. If you are using preprocess include it in PostCSS task
+4. If you are using preprocessor include it in PostCSS task
 5. Add stylelint and postcss-reporter (at least with _clearMessages_ option, 
 but we recommend _throwError_ also)
 6. Add other Grunt tasks to process your CSS
