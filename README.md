@@ -1,109 +1,112 @@
-# standardcss
+# standardcss | DEPRECATED
+
+**This project is deprecated in favour of [stylelint-config-visionapps](https://github.com/visionappscz/stylelint-config-visionapps).**
+
 ##CSS Standard Style
 
 ###Rules
 1. Use 4 spaces for indentation.
-  ```css
+```css
   h1 {
       color: lime;
   }
-  ```
+```
 
 2. Use single quotes.
-  ```css
+```css
   h1:after {
       content: ' ';
   }
-  ```
-  
+```
+
 3. Write urls without quotes.
-  ```css
+```css
   div {
       background-image: url(background.jpg);
   }
-  ```
-  
+```
+
 4. In attribute selectors, enclose attribute value in quotes.
-  ```css
+```css
   a[target='_blank'] {
       color: lime;
   }
-  ```
-  
+```
+
 5. Don’t select via IDs.
-  ```css
+```css
   // ✓ ok 
   .element {
       color: lime;
   }
-  ```
-  ```css
+```
+```css
   // ✗ avoid 
   #element {
       color: lime;
   }
-  ```
-  
+```
+
 6. Add a space after selector.
-  ```css
+```css
   // ✓ ok 
   h1 {
       color: lime;
   }
-  ```
-  ```css
+```
+```css
   // ✗ avoid 
   h1{
       color: lime;
   }
-  ```
-  
+```
+
 7. Add a space after property name.
-  ```css
+```css
   // ✓ ok 
   h1 {
       color: lime;
   }
-  ```
-  ```css
+```
+```css
   // ✗ avoid 
   h1 {
       color:lime;
   }
-  ```
-  
+```
+
 8. Commas should have a space after them.
-  ```css
+```css
   p {
       font-family: 'Times New Roman', Times, serif;
   }
-  ```
-  
+```
+
 9. Add a semicolon after every declaration.
-  ```css
+```css
   h1 {
       color: lime;
       text-align: center // ✗ avoid 
   }
-  ```
-  
+```
+
 10. Put each declaration on a line.
-  ```css
+```css
   h1 {
       color: lime;text-align: center; // ✗ avoid
   }
-  ```
-  
+```
+
 11. Put multiple values on one line each.
-  ```css
+```css
   h1,
   h2,
   h3 {
       color: lime;
   }
-  ```
+```
 12. Always put a blank line between rules.
-  ```css
+```css
   // ✓ ok 
   h1 {
       color: lime;
@@ -112,8 +115,8 @@
   p {
       font-family: 'Times New Roman', Times, serif;
   }
-  ```
-  ```css
+```
+```css
   // ✗ avoid
   h1 {
       color: lime;
@@ -121,9 +124,9 @@
   p {
       font-family: 'Times New Roman', Times, serif;
   }
-  ```
+```
 13. Multiple blank lines are not allowed.
-  ```css
+```css
   // ✓ ok 
   h1 {
       color: lime;
@@ -132,8 +135,8 @@
   p {
       font-family: 'Times New Roman', Times, serif;
   }
-  ```
-  ```css
+```
+```css
   // ✗ avoid
   h1 {
       color: lime;
@@ -143,8 +146,8 @@
   p {
       font-family: 'Times New Roman', Times, serif;
   }
-  ```
-  
+```
+
 ### Implementation with Stylelint, PostCSS and Grunt
 We are using [stylelint](https://github.com/stylelint/stylelint) for easiest implementation 
 of standardcss rules. This linter is powered by [PostCSS](https://github.com/postcss/postcss). 
@@ -162,7 +165,7 @@ Best practice is to check your CSS before any other tasks process it.
 3. Prepare Grunt PostCSS task
 4. If you are using preprocessor include it in PostCSS task
 5. Add stylelint and postcss-reporter (at least with _clearMessages_ option, 
-but we recommend _throwError_ also)
+   but we recommend _throwError_ also)
 6. Add other Grunt tasks to process your CSS
 7. Lint your CSS!
 8. (Optional) Cry over errors and inconsistencies in your stylesheet
@@ -181,4 +184,4 @@ lint: {
   src: 'resources/less/**/*.less',
   dest: '.tmp/main.less',
 },
-  ```
+```
